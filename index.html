@@ -1,96 +1,169 @@
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    *{
+    body {
       font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
     }
-    /* For desktop: */
-table {
-  width: 80%;
-}
 
-/* For mobile phones: */
-@media only screen and (max-width: 600px) {
-  table {
-    width: 100%;
-  }
-}
-
-    #top-title h3{
-      margin-top: 100px;
-      display:flex;
-      justify-content: center;
-      }
-    
-    table{
-      border-collapse: collapse;
-      width: 80%;
-      margin: 20px auto;
+    h1 {
+      text-align: center;
+      color: #333333;
     }
-    th, td{
+
+    .container {
+      width: 600px;
+      margin: 0 auto;
+      padding: 20px;
       border: 1px solid #cccccc;
+      background-color: #ffffff;
+    }
+
+    .question {
+      margin-bottom: 10px;
+    }
+
+    .options {
+      list-style: none;
+      padding: 0;
+    }
+
+    .option {
+      margin-bottom: 5px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    .button {
+      display: block;
+      width: 100px;
+      margin: 20px auto;
       padding: 10px;
-      text-align: left;
+      border: none;
+      background-color: #333333;
+      color: #ffffff;
+      cursor: pointer;
     }
-    th{
-      background-color: #6637ed;
-      color: white;
+
+    .result {
+      text-align: center;
+      font-weight: bold;
+      color: #333333;
     }
-    tr:nth-child(even){
-      background-color: #f2f2f2;
+
+    .correct {
+      color: green;
     }
-    .rupee{
-      font-family: "WebRupee", Arial, sans-serif;
+
+    .wrong {
+      color: red;
     }
   </style>
 </head>
 <body>
-  <div id="top-title">
-    <h3>Graphics Design Charges </h3>
+  <h1>Tenses Quiz</h1>
+  <div class="container">
+    <form id="quiz-form">
+      <div class="question">
+        <p>Q1. He ___ (work) in this company since 2010.</p>
+        <ul class="options">
+          <li class="option"><input type="radio" name="q1" value="a">a) works</li>
+          <li class="option"><input type="radio" name="q1" value="b">b) worked</li>
+          <li class="option"><input type="radio" name="q1" value="c">c) has worked</li>
+          <li class="option"><input type="radio" name="q1" value="d">d) had worked</li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>Q2. She ___ (study) for the exam right now.</p>
+        <ul class="options">
+          <li class="option"><input type="radio" name="q2" value="a">a) studies</li>
+          <li class="option"><input type="radio" name="q2" value="b">b) studied</li>
+          <li class="option"><input type="radio" name="q2" value="c">c) is studying</li>
+          <li class="option"><input type="radio" name="q2" value="d">d) was studying</li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>Q3. They ___ (go) to the cinema yesterday.</p>
+        <ul class="options">
+          <li class="option"><input type="radio" name="q3" value="a">a) go</li>
+          <li class="option"><input type="radio" name="q3" value="b">b) went</li>
+          <li class="option"><input type="radio" name="q3" value="c">c) have gone</li>
+          <li class="option"><input type="radio" name="q3" value="d">d) were going</li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>Q4. He ___ (not eat) anything since morning.</p>
+        <ul class="options">
+          <li class="option"><input type="radio" name="q4" value="a">a) does not eat</li>
+          <li class="option"><input type="radio" name="q4" value="b">b) did not eat</li>
+          <li class="option"><input type="radio" name="q4" value="c">c) has not eaten</li>
+          <li class="option"><input type="radio" name="q4" value="d">d) had not eaten</li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>Q5. She ___ (finish) her homework by 10 o'clock.</p>
+        <ul class="options">
+          <li class="option"><input type="radio" name="q5" value="a">a) finishes</li>
+          <li class="option"><input type="radio" name="q5" value="b">b) finished</li>
+          <li class="option"><input type="radio" name="q5" value="c">c) will finish</li>
+          <li class="option"><input type="radio" name="q5" value="d">d) would finish</li>
+        </ul>
+      </div>
+      <input type="button" class="button" value="Submit" onclick="checkAnswers()">
+    </form>
+    <div id="result" class="result"></div>
   </div>
-  <table>
-    <tr>
-      <th>Project</th>
-      <th>Rate</th>
-    </tr>
-    <tr>
-      <td>Facebook Ad</td>
-      <td class="rupee">Rs. 300</td>
-    </tr>
-    <tr>
-      <td>Instagram Ad</td>
-      <td class="rupee">Rs. 300</td>
-    </tr>
-    <tr>
-      <td>Business Card</td>
-      <td class="rupee">Rs. 300</td>
-    </tr>
-    <tr>
-      <td>Resume Design</td>
-      <td class="rupee">Rs. 600</td>
-    </tr>
-    <tr>
-      <td>Poster Design</td>
-      <td class="rupee">Rs. 800</td>
-    </tr>
-    <tr>
-      <td>Pamphlet Design</td>
-      <td class="rupee">Rs. 800</td>
-    </tr>
-    <tr>
-      <td>Logo Design</td>
-      <td class="rupee">Rs. 1000</td>
-    </tr>
-    <tr>
-      <td>Banner Design</td>
-      <td class="rupee">Rs. 1500</td>
-    </tr>
-    <tr>
-      <td>Website Design</td>
-      <td class="rupee">Rs. 3000</td>
-    </tr>
-    <tr>
-  </table>
+  <script>
+    // Define the correct answers for each question
+    var answers = {
+      q1: "c",
+      q2: "c",
+      q3: "b",
+      q4: "c",
+      q5: "c"
+    };
+
+    // Define a function to check the user's answers and display the result
+    function checkAnswers() {
+      // Get the form element by its id
+      var form = document.getElementById("quiz-form");
+      // Get all the input elements inside the form
+      var inputs = form.getElementsByTagName("input");
+      // Initialize a variable to store the number of correct answers
+      var score = 0;
+      // Loop through the input elements
+      for (var i = 0; i < inputs.length; i++) {
+        // If the input is a radio button and it is checked
+        if (inputs[i].type == "radio" && inputs[i].checked) {
+          // Get the name and value of the input
+          var name = inputs[i].name;
+          var value = inputs[i].value;
+          // If the value matches the correct answer for that question
+          if (value == answers[name]) {
+            // Increase the score by one
+            score++;
+            // Change the color of the label to green
+            inputs[i].parentNode.style.color = "green";
+          } else {
+            // Otherwise, change the color of the label to red
+            inputs[i].parentNode.style.color = "red";
+          }
+        }
+      }
+      // Get the result element by its id
+      var result = document.getElementById("result");
+      // Display the score and a message based on the score
+      if (score == 5) {
+        result.innerHTML = "You scored " + score + "/5. Excellent!";
+      } else if (score >= 3) {
+        result.innerHTML = "You scored " + score + "/5. Good job!";
+      } else {
+        result.innerHTML = "You scored " + score + "/5. You can do better!";
+      }
+    }
+  </script>
 </body>
-</html>
+          </html>
+            
